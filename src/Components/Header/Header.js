@@ -46,10 +46,10 @@ const Header = ({handleSearch}) => {
           </ul>
         </div>
         <div class="navbar-end">
-          <form className="d-flex"  onSubmit={handleSearch} >
+          <form className="flex"  onSubmit={handleSearch} >
 
             <input
-              className="form-control me-2"
+              className="form-control me-2 rounded "
               type="search"
               name="searchText"
               placeholder="Search"

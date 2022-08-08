@@ -24,6 +24,19 @@ function App() {
     
   }, []);
 
+  const handleDelete = (id) => {
+    console.log(id);
+  
+    fetch(`http://localhost:4000/note/${id}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setIsReload(!isReload);
+      });
+  };
+
 
   const handleSearch=(e)=>{
     e.preventDefault();
@@ -70,6 +83,9 @@ function App() {
         {notes.map((note) => (
           <NoteCard
             note={note}
+            handleDelete={handleDelete}
+            setIsReload={setIsReload}
+            isReload={isReload}
           />
         ))}
       

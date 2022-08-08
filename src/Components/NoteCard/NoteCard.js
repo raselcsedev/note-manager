@@ -12,7 +12,7 @@ import UpdateModals from '../UpdateModals/UpdateModals';
   width: "80px",
 }; */
 
-const NoteCard = ({ note }) => {
+const NoteCard = ({ note, handleDelete,isReload,setIsReload }) => {
   return (
     <>
 
@@ -38,12 +38,13 @@ const NoteCard = ({ note }) => {
                   <div className='flex justify-center mr-4'>
                     <button
                       className="color-801336 btn btn-sm"
+                      onClick={() => handleDelete(note._id)}
 
                     >
                       delete
                     </button>
                   </div>
-                  <UpdateModals />
+                  <UpdateModals setIsReload={setIsReload} isReload={isReload} id={note._id} />
 
                 </div>
 
